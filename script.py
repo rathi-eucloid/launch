@@ -96,23 +96,31 @@ TIMESTAMP_COL   = 2        # column B
 
 # Product group headers for row 1 (matches the WIP workbook, 51 slots in order)
 PRODUCT_LABELS = [
-    "Z Fold 7 512 GB", "S25 Ultra 512GB", "Z Flip 512 GB", "S25 Edge 512 GB",
-    "Galaxy Tab S11 512 GB", "Z Fold 7 256GB Blue Shadow", "Z Fold 7 256GB Jet Black",
-    "Z Fold 7 256GB Silver Shadow", "Z Fold 7 1TB Zet Black", "Z Fold 7 512GB Zet Black",
-    "Z Fold 7 512GB Silver Shadow", "S25 Ultra 256GB Titanium Black",
-    "S25 Ultra 256GB Titanium Gray", "S25 Ultra 256GB Titanium Silver Blue",
-    "S25 Ultra 256GB Titanium White Silver", "S25 Ultra 512GB Titanium Gray",
-    "S25 Ultra 512GB Titanium Silver Blue", "S25 Ultra 512GB Titanium White Silver",
-    "S25 Edge 256GB Titanium Silver", "S25 Edge 512GB Titanium Jet Black",
-    "S26 Ultra 256GB Sky Blue", "S26 Ultra 256GB Cobalt Violet", "S26 Ultra 256GB White",
-    "S26 Ultra 256GB Black", "S26 Ultra 512GB Sky Blue", "S26 Ultra 512GB Cobalt Violet",
-    "S26 Ultra 512GB White", "S26 Ultra 512GB Black", "S26 Ultra 1TB Sky Blue ",
-    "S26 Ultra 1TB Cobalt Violet", "S26 Ultra 1TB White", "S26 Ultra 1TB Black",
-    "S26 256GB Sky Blue", "S26 256GB Cobalt Violet", "S26 256GB White", "S26 256GB Black",
-    "S26 512GB Sky Blue", "S26 512GB Cobalt Violet", "S26 512GB White", "S26 512GB Black",
-    "S26+ 256GB Sky Blue", "S26+ 256GB Cobalt Violet", "S26+ 256GB White", "S26+ 256GB Black",
-    "S26+ 512GB Sky Blue", "S26+ 512GB Cobalt Violet", "S26+ 512GB White", "S26+ 512GB Black",
+    "Z Fold8 Ultra 256GB Violet Shadow",
+    "Z Fold8 Ultra 256GB Cream",
+    "Z Fold8 Ultra 256GB Graphite",
+
+    "Z Fold8 Ultra 512GB Violet Shadow",
+    "Z Fold8 Ultra 512GB Cream",
+    "Z Fold8 Ultra 512GB Graphite",
+
+    "Z Fold8 256GB Lavender",
+    "Z Fold8 256GB Cream",
+    "Z Fold8 256GB Graphite",
+
+    "Z Fold8 512GB Lavender",
+    "Z Fold8 512GB Cream",
+    "Z Fold8 512GB Graphite",
+
+    "Z Flip8 256GB Pink",
+    "Z Flip8 256GB Cream",
+    "Z Flip8 256GB Graphite",
+
+    "Z Flip8 512GB Pink",
+    "Z Flip8 512GB Cream",
+    "Z Flip8 512GB Graphite",
 ]
+
 SUBHEADERS = ["Amazon price", "Samsung price", "BestBuy.com price",
               "SKU_ID_Amazon ", "SKU_ID_Samsung ", "SKU_ID_BestBuy.com",
               "vs Amazon", "vs Bestbuy"]
@@ -1361,6 +1369,59 @@ async def main():
 
     # Replace/extend these lists with the product URLs you want to iterate over
     amazon_urls = [
+    #Galaxy Z Fold8 Ultra
+    #256gb violet shadow
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Ultra-Graphite/dp/B0H12DXK8J/ref=sr_1_1?dib=eyJ2IjoiMSJ9.mQGYXBbib1laz-btEXxpCweYC8_XBZDdtTTwNIcleVF5AbhIB0qW7hQdFNPa6cp3pEpuB3YTNrh5m1Z3BvGAUFweY9OOifoj16-d_1pf2CAp4A4E1jFPpWbjXAXrifHhwZPq0YbDcm90JduJ9_L2uDMCcZ1CcqZ9itpQQTFrLeUiyCNp1h5kGiOmsIefHVSBl3QpyxLrODkaVU7LnqU_kU2K-lu17uhTivzalY66y0U.3bnSFvYn8-fFdaZnqDZnhGCYzz12lrSDsgUY3RhoDjM&dib_tag=se&keywords=Galaxy%2BZ%2BFold8%2BUltra&qid=1784728904&sr=8-1&th=1",
+    #256 cream
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Ultra-Graphite/dp/B0H12LHVFB/ref=sr_1_1?dib=eyJ2IjoiMSJ9.mQGYXBbib1laz-btEXxpCweYC8_XBZDdtTTwNIcleVF5AbhIB0qW7hQdFNPa6cp3pEpuB3YTNrh5m1Z3BvGAUFweY9OOifoj16-d_1pf2CAp4A4E1jFPpWbjXAXrifHhwZPq0YbDcm90JduJ9_L2uDMCcZ1CcqZ9itpQQTFrLeUiyCNp1h5kGiOmsIefHVSBl3QpyxLrODkaVU7LnqU_kU2K-lu17uhTivzalY66y0U.3bnSFvYn8-fFdaZnqDZnhGCYzz12lrSDsgUY3RhoDjM&dib_tag=se&keywords=Galaxy%2BZ%2BFold8%2BUltra&qid=1784728904&sr=8-1&th=1",
+    #256 graphite
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Ultra-Graphite/dp/B0H12KX1X4/ref=sr_1_1?dib=eyJ2IjoiMSJ9.mQGYXBbib1laz-btEXxpCweYC8_XBZDdtTTwNIcleVF5AbhIB0qW7hQdFNPa6cp3pEpuB3YTNrh5m1Z3BvGAUFweY9OOifoj16-d_1pf2CAp4A4E1jFPpWbjXAXrifHhwZPq0YbDcm90JduJ9_L2uDMCcZ1CcqZ9itpQQTFrLeUiyCNp1h5kGiOmsIefHVSBl3QpyxLrODkaVU7LnqU_kU2K-lu17uhTivzalY66y0U.3bnSFvYn8-fFdaZnqDZnhGCYzz12lrSDsgUY3RhoDjM&dib_tag=se&keywords=Galaxy%2BZ%2BFold8%2BUltra&qid=1784728904&sr=8-1&th=1",
+
+    #512gb violet shadow
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Ultra-Graphite/dp/B0H12C5RCT/ref=sr_1_1?dib=eyJ2IjoiMSJ9.mQGYXBbib1laz-btEXxpCweYC8_XBZDdtTTwNIcleVF5AbhIB0qW7hQdFNPa6cp3pEpuB3YTNrh5m1Z3BvGAUFweY9OOifoj16-d_1pf2CAp4A4E1jFPpWbjXAXrifHhwZPq0YbDcm90JduJ9_L2uDMCcZ1CcqZ9itpQQTFrLeUiyCNp1h5kGiOmsIefHVSBl3QpyxLrODkaVU7LnqU_kU2K-lu17uhTivzalY66y0U.3bnSFvYn8-fFdaZnqDZnhGCYzz12lrSDsgUY3RhoDjM&dib_tag=se&keywords=Galaxy%2BZ%2BFold8%2BUltra&qid=1784728904&sr=8-1&th=1",
+    #512 cream
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Ultra-Graphite/dp/B0H126F98T/ref=sr_1_1?dib=eyJ2IjoiMSJ9.mQGYXBbib1laz-btEXxpCweYC8_XBZDdtTTwNIcleVF5AbhIB0qW7hQdFNPa6cp3pEpuB3YTNrh5m1Z3BvGAUFweY9OOifoj16-d_1pf2CAp4A4E1jFPpWbjXAXrifHhwZPq0YbDcm90JduJ9_L2uDMCcZ1CcqZ9itpQQTFrLeUiyCNp1h5kGiOmsIefHVSBl3QpyxLrODkaVU7LnqU_kU2K-lu17uhTivzalY66y0U.3bnSFvYn8-fFdaZnqDZnhGCYzz12lrSDsgUY3RhoDjM&dib_tag=se&keywords=Galaxy%2BZ%2BFold8%2BUltra&qid=1784728904&sr=8-1&th=1",
+    #512 graphite
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Ultra-Graphite/dp/B0H12RV546/ref=sr_1_1?dib=eyJ2IjoiMSJ9.mQGYXBbib1laz-btEXxpCweYC8_XBZDdtTTwNIcleVF5AbhIB0qW7hQdFNPa6cp3pEpuB3YTNrh5m1Z3BvGAUFweY9OOifoj16-d_1pf2CAp4A4E1jFPpWbjXAXrifHhwZPq0YbDcm90JduJ9_L2uDMCcZ1CcqZ9itpQQTFrLeUiyCNp1h5kGiOmsIefHVSBl3QpyxLrODkaVU7LnqU_kU2K-lu17uhTivzalY66y0U.3bnSFvYn8-fFdaZnqDZnhGCYzz12lrSDsgUY3RhoDjM&dib_tag=se&keywords=Galaxy%2BZ%2BFold8%2BUltra&qid=1784728904&sr=8-1&th=1",
+
+
+
+    #Galaxy Z Fold8
+    #256gb Lavender
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Unlocked-Phone/dp/B0H12M2TY4/ref=sr_1_1?crid=M7QH6HM2VT6W&dib=eyJ2IjoiMSJ9.NqWTcjyRMwmJQ28aDwo5KiY9g8ZQKssWPaXtGYvxoWLi1UIhFZEZFrsO2bqsIfWNDZpPGNbl1Uk5fHvCrGLnyiVa8bkw2WfJbwKOv0NAi6N_GjM27AR7-0MOdVL0Nq-n6TZ8qgU0dnjPwecl0U_7la5rHcadOT9HDgHCfH0DAnG-j0gtdDQwGESxtBlV8zUAhB7jDwWrMEUTf8x6L6NADcer6RXAkfSlPqNGBTxS7hg.xVyvy6LRFyTYdFggV6wtoxUXW4k1BjKgu11_wgBq7HY&dib_tag=se&keywords=Galaxy%2BZ%2BFold8&qid=1784729203&sprefix=galaxy%2Bz%2Bfold8%2Bultra%2Caps%2C573&sr=8-1&th=1",
+    #256gb cream
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Unlocked-Phone/dp/B0H12P5KS7/ref=sr_1_1?crid=M7QH6HM2VT6W&dib=eyJ2IjoiMSJ9.NqWTcjyRMwmJQ28aDwo5KiY9g8ZQKssWPaXtGYvxoWLi1UIhFZEZFrsO2bqsIfWNDZpPGNbl1Uk5fHvCrGLnyiVa8bkw2WfJbwKOv0NAi6N_GjM27AR7-0MOdVL0Nq-n6TZ8qgU0dnjPwecl0U_7la5rHcadOT9HDgHCfH0DAnG-j0gtdDQwGESxtBlV8zUAhB7jDwWrMEUTf8x6L6NADcer6RXAkfSlPqNGBTxS7hg.xVyvy6LRFyTYdFggV6wtoxUXW4k1BjKgu11_wgBq7HY&dib_tag=se&keywords=Galaxy%2BZ%2BFold8&qid=1784729203&sprefix=galaxy%2Bz%2Bfold8%2Bultra%2Caps%2C573&sr=8-1&th=1",
+    #256gb graphite
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Unlocked-Phone/dp/B0H126B3KV/ref=sr_1_1?crid=M7QH6HM2VT6W&dib=eyJ2IjoiMSJ9.NqWTcjyRMwmJQ28aDwo5KiY9g8ZQKssWPaXtGYvxoWLi1UIhFZEZFrsO2bqsIfWNDZpPGNbl1Uk5fHvCrGLnyiVa8bkw2WfJbwKOv0NAi6N_GjM27AR7-0MOdVL0Nq-n6TZ8qgU0dnjPwecl0U_7la5rHcadOT9HDgHCfH0DAnG-j0gtdDQwGESxtBlV8zUAhB7jDwWrMEUTf8x6L6NADcer6RXAkfSlPqNGBTxS7hg.xVyvy6LRFyTYdFggV6wtoxUXW4k1BjKgu11_wgBq7HY&dib_tag=se&keywords=Galaxy%2BZ%2BFold8&qid=1784729203&sprefix=galaxy%2Bz%2Bfold8%2Bultra%2Caps%2C573&sr=8-1&th=1",
+
+    #512gb lavender
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Unlocked-Phone/dp/B0H12LFV9T/ref=sr_1_1?crid=M7QH6HM2VT6W&dib=eyJ2IjoiMSJ9.NqWTcjyRMwmJQ28aDwo5KiY9g8ZQKssWPaXtGYvxoWLi1UIhFZEZFrsO2bqsIfWNDZpPGNbl1Uk5fHvCrGLnyiVa8bkw2WfJbwKOv0NAi6N_GjM27AR7-0MOdVL0Nq-n6TZ8qgU0dnjPwecl0U_7la5rHcadOT9HDgHCfH0DAnG-j0gtdDQwGESxtBlV8zUAhB7jDwWrMEUTf8x6L6NADcer6RXAkfSlPqNGBTxS7hg.xVyvy6LRFyTYdFggV6wtoxUXW4k1BjKgu11_wgBq7HY&dib_tag=se&keywords=Galaxy%2BZ%2BFold8&qid=1784729203&sprefix=galaxy%2Bz%2Bfold8%2Bultra%2Caps%2C573&sr=8-1&th=1",
+    #512gb cream
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Unlocked-Phone/dp/B0H12RY7Z6/ref=sr_1_1?crid=M7QH6HM2VT6W&dib=eyJ2IjoiMSJ9.NqWTcjyRMwmJQ28aDwo5KiY9g8ZQKssWPaXtGYvxoWLi1UIhFZEZFrsO2bqsIfWNDZpPGNbl1Uk5fHvCrGLnyiVa8bkw2WfJbwKOv0NAi6N_GjM27AR7-0MOdVL0Nq-n6TZ8qgU0dnjPwecl0U_7la5rHcadOT9HDgHCfH0DAnG-j0gtdDQwGESxtBlV8zUAhB7jDwWrMEUTf8x6L6NADcer6RXAkfSlPqNGBTxS7hg.xVyvy6LRFyTYdFggV6wtoxUXW4k1BjKgu11_wgBq7HY&dib_tag=se&keywords=Galaxy%2BZ%2BFold8&qid=1784729203&sprefix=galaxy%2Bz%2Bfold8%2Bultra%2Caps%2C573&sr=8-1&th=1",
+    #512gb graphite
+    "https://www.amazon.com/Samsung-Galaxy-Fold8-Unlocked-Phone/dp/B0H1265SZQ/ref=sr_1_1?crid=M7QH6HM2VT6W&dib=eyJ2IjoiMSJ9.NqWTcjyRMwmJQ28aDwo5KiY9g8ZQKssWPaXtGYvxoWLi1UIhFZEZFrsO2bqsIfWNDZpPGNbl1Uk5fHvCrGLnyiVa8bkw2WfJbwKOv0NAi6N_GjM27AR7-0MOdVL0Nq-n6TZ8qgU0dnjPwecl0U_7la5rHcadOT9HDgHCfH0DAnG-j0gtdDQwGESxtBlV8zUAhB7jDwWrMEUTf8x6L6NADcer6RXAkfSlPqNGBTxS7hg.xVyvy6LRFyTYdFggV6wtoxUXW4k1BjKgu11_wgBq7HY&dib_tag=se&keywords=Galaxy%2BZ%2BFold8&qid=1784729203&sprefix=galaxy%2Bz%2Bfold8%2Bultra%2Caps%2C573&sr=8-1&th=1",
+
+
+
+
+
+
+    #Galaxy Z Flip8
+    #256gb pink
+    "https://www.amazon.com/Samsung-Galaxy-Flip8-Unlocked-Phone/dp/B0H12NWT53/ref=sr_1_2?crid=32LQKYZ234NN6&dib=eyJ2IjoiMSJ9.Kwpqf2RZ1jTGep7e2PAMBbxAY-yiEXce6C5K74oj4b-NAvoCe2_I8jLCsX-pp8fjJr-kW23RxjV4ZOydYJbLWIU3WtYtlb2eZ99d31nxtNJ7xuvf16o6DNLYZOmfsGsJiZs5YVwCmm6DpgD12la_xo4r-hqNLZddeDxLtw5g4reMkv_j-2orRD-gULZXnt7CbkoDdBHJyY7eL3Aj2tT_Qldy69at7Ieb-39XdSgRusY.yWbpQ0lxwXQPzltq-eaA3TVQpOgf3eTccIqwJs-rGwY&dib_tag=se&keywords=Galaxy%2BZ%2BFlip8&qid=1784729856&sprefix=galaxy%2Bz%2Bfold8%2Caps%2C508&sr=8-2&th=1",
+    #256gb cream
+    "https://www.amazon.com/Samsung-Galaxy-Flip8-Unlocked-Phone/dp/B0H12MGRVF/ref=sr_1_2?crid=32LQKYZ234NN6&dib=eyJ2IjoiMSJ9.Kwpqf2RZ1jTGep7e2PAMBbxAY-yiEXce6C5K74oj4b-NAvoCe2_I8jLCsX-pp8fjJr-kW23RxjV4ZOydYJbLWIU3WtYtlb2eZ99d31nxtNJ7xuvf16o6DNLYZOmfsGsJiZs5YVwCmm6DpgD12la_xo4r-hqNLZddeDxLtw5g4reMkv_j-2orRD-gULZXnt7CbkoDdBHJyY7eL3Aj2tT_Qldy69at7Ieb-39XdSgRusY.yWbpQ0lxwXQPzltq-eaA3TVQpOgf3eTccIqwJs-rGwY&dib_tag=se&keywords=Galaxy%2BZ%2BFlip8&qid=1784729856&sprefix=galaxy%2Bz%2Bfold8%2Caps%2C508&sr=8-2&th=1",
+    #256gb graphite
+    "https://www.amazon.com/Samsung-Galaxy-Flip8-Unlocked-Phone/dp/B0H12FP315/ref=sr_1_2?crid=32LQKYZ234NN6&dib=eyJ2IjoiMSJ9.Kwpqf2RZ1jTGep7e2PAMBbxAY-yiEXce6C5K74oj4b-NAvoCe2_I8jLCsX-pp8fjJr-kW23RxjV4ZOydYJbLWIU3WtYtlb2eZ99d31nxtNJ7xuvf16o6DNLYZOmfsGsJiZs5YVwCmm6DpgD12la_xo4r-hqNLZddeDxLtw5g4reMkv_j-2orRD-gULZXnt7CbkoDdBHJyY7eL3Aj2tT_Qldy69at7Ieb-39XdSgRusY.yWbpQ0lxwXQPzltq-eaA3TVQpOgf3eTccIqwJs-rGwY&dib_tag=se&keywords=Galaxy%2BZ%2BFlip8&qid=1784729856&sprefix=galaxy%2Bz%2Bfold8%2Caps%2C508&sr=8-2&th=1",
+
+    #512gb pink
+    "https://www.amazon.com/Samsung-Galaxy-Flip8-Unlocked-Phone/dp/B0H12LF61V/ref=sr_1_2?crid=32LQKYZ234NN6&dib=eyJ2IjoiMSJ9.Kwpqf2RZ1jTGep7e2PAMBbxAY-yiEXce6C5K74oj4b-NAvoCe2_I8jLCsX-pp8fjJr-kW23RxjV4ZOydYJbLWIU3WtYtlb2eZ99d31nxtNJ7xuvf16o6DNLYZOmfsGsJiZs5YVwCmm6DpgD12la_xo4r-hqNLZddeDxLtw5g4reMkv_j-2orRD-gULZXnt7CbkoDdBHJyY7eL3Aj2tT_Qldy69at7Ieb-39XdSgRusY.yWbpQ0lxwXQPzltq-eaA3TVQpOgf3eTccIqwJs-rGwY&dib_tag=se&keywords=Galaxy%2BZ%2BFlip8&qid=1784729856&sprefix=galaxy%2Bz%2Bfold8%2Caps%2C508&sr=8-2&th=1",
+    #512gb cream
+    "https://www.amazon.com/Samsung-Galaxy-Flip8-Unlocked-Phone/dp/B0H12689VV/ref=sr_1_2?crid=32LQKYZ234NN6&dib=eyJ2IjoiMSJ9.Kwpqf2RZ1jTGep7e2PAMBbxAY-yiEXce6C5K74oj4b-NAvoCe2_I8jLCsX-pp8fjJr-kW23RxjV4ZOydYJbLWIU3WtYtlb2eZ99d31nxtNJ7xuvf16o6DNLYZOmfsGsJiZs5YVwCmm6DpgD12la_xo4r-hqNLZddeDxLtw5g4reMkv_j-2orRD-gULZXnt7CbkoDdBHJyY7eL3Aj2tT_Qldy69at7Ieb-39XdSgRusY.yWbpQ0lxwXQPzltq-eaA3TVQpOgf3eTccIqwJs-rGwY&dib_tag=se&keywords=Galaxy%2BZ%2BFlip8&qid=1784729856&sprefix=galaxy%2Bz%2Bfold8%2Caps%2C508&sr=8-2&th=1",
+    #512gb graphite
+    "https://www.amazon.com/Samsung-Galaxy-Flip8-Unlocked-Phone/dp/B0H126ZFMP/ref=sr_1_2?crid=32LQKYZ234NN6&dib=eyJ2IjoiMSJ9.Kwpqf2RZ1jTGep7e2PAMBbxAY-yiEXce6C5K74oj4b-NAvoCe2_I8jLCsX-pp8fjJr-kW23RxjV4ZOydYJbLWIU3WtYtlb2eZ99d31nxtNJ7xuvf16o6DNLYZOmfsGsJiZs5YVwCmm6DpgD12la_xo4r-hqNLZddeDxLtw5g4reMkv_j-2orRD-gULZXnt7CbkoDdBHJyY7eL3Aj2tT_Qldy69at7Ieb-39XdSgRusY.yWbpQ0lxwXQPzltq-eaA3TVQpOgf3eTccIqwJs-rGwY&dib_tag=se&keywords=Galaxy%2BZ%2BFlip8&qid=1784729856&sprefix=galaxy%2Bz%2Bfold8%2Caps%2C508&sr=8-2&th=1",
+
+
     ]
 
     bestbuy_urls = [
@@ -1368,6 +1429,55 @@ async def main():
     ]
 
     samsung_urls = [
+    # Galaxy Z Fold8 Ultra
+    #256gb violet shadow
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-256gb-unlocked-sku-sm-f976uzvaxaa/",
+    # 256 cream
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-256gb-unlocked-sku-sm-f976uzwaxaa/",
+    #256 graphite
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-256gb-unlocked-sku-sm-f976uzkaxaa/",
+
+
+    #512gb violet shadow
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-512gb-unlocked-sku-sm-f976uzvexaa/",
+    #512 cream
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-512gb-unlocked-sku-sm-f976uzwexaa/",
+    #512 graphite
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8-ultra/buy/galaxy-z-fold8-ultra-512gb-unlocked-sku-sm-f976uzkexaa/",
+
+
+
+
+    #Galaxy Z Fold8
+    #256gb Lavender
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-256gb-unlocked-sku-sm-f971ulvaxaa/",
+    #256gb cream
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-256gb-unlocked-sku-sm-f971uzwaxaa/",
+    #256gb graphite
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-256gb-unlocked-sku-sm-f971uzkaxaa/",
+
+    #512gb lavender
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-512gb-unlocked-sku-sm-f971ulvexaa/",
+    #512gb cream
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-512gb-unlocked-sku-sm-f971uzwexaa/",
+    #512gb graphite
+    "https://www.samsung.com/us/smartphones/galaxy-z-fold8/buy/galaxy-z-fold8-512gb-unlocked-sku-sm-f971uzkexaa/",
+
+
+    #Galaxy Z Flip8
+    #256gb pink
+    "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-256gb-unlocked-sku-sm-f776uliaxaa/",
+    #256gb cream
+    "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-256gb-unlocked-sku-sm-f776uzwaxaa/",
+    #256gb graphite
+    "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-256gb-unlocked-sku-sm-f776uzkaxaa/",
+
+    #512gb pink
+    "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-512gb-unlocked-sku-sm-f776uliexaa/",
+    #512gb cream
+    "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-512gb-unlocked-sku-sm-f776uzwexaa/",
+    #512gb graphite
+    "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-512gb-unlocked-sku-sm-f776uzkexaa/",
 
     ]
 
