@@ -119,6 +119,17 @@ PRODUCT_LABELS = [
     "Z Flip8 512GB Pink",
     "Z Flip8 512GB Cream",
     "Z Flip8 512GB Graphite",
+
+    "Watch9 Cream Bluetooth 40 mm",
+    "Watch9 Cream LTE 40 mm",
+    "Watch9 Graphite Bluetooth 40 mm",
+    "Watch9 Graphite LTE 40 mm",
+    "Watch9 Silver Bluetooth 44 mm",
+    "Watch9 Silver LTE 44 mm",
+    "Watch9 Graphite Bluetooth 44 mm",
+    "Watch9 Graphite LTE 44 mm",
+    "Watch Ultra2 Titanium Gray LTE 47 mm Olive Band",
+    "Watch Ultra2 Titanium Silver LTE 47 mm Olive Band",
 ]
 
 SUBHEADERS = ["Amazon price", "Samsung price", "BestBuy.com price",
@@ -1422,6 +1433,41 @@ async def main():
     "https://www.amazon.com/Samsung-Galaxy-Flip8-Unlocked-Phone/dp/B0H126ZFMP/ref=sr_1_2?crid=32LQKYZ234NN6&dib=eyJ2IjoiMSJ9.Kwpqf2RZ1jTGep7e2PAMBbxAY-yiEXce6C5K74oj4b-NAvoCe2_I8jLCsX-pp8fjJr-kW23RxjV4ZOydYJbLWIU3WtYtlb2eZ99d31nxtNJ7xuvf16o6DNLYZOmfsGsJiZs5YVwCmm6DpgD12la_xo4r-hqNLZddeDxLtw5g4reMkv_j-2orRD-gULZXnt7CbkoDdBHJyY7eL3Aj2tT_Qldy69at7Ieb-39XdSgRusY.yWbpQ0lxwXQPzltq-eaA3TVQpOgf3eTccIqwJs-rGwY&dib_tag=se&keywords=Galaxy%2BZ%2BFlip8&qid=1784729856&sprefix=galaxy%2Bz%2Bfold8%2Caps%2C508&sr=8-2&th=1",
 
 
+
+
+
+
+
+
+
+    # watches 
+
+    #Galaxy Watch9 ( 40 mm) cream bluetooth
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9BHP9XW/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+    #Galaxy Watch9 ( 40 mm) cream lte
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9BF1BFS/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+
+    #Galaxy Watch9 ( 40 mm) graphite bluetooth
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9BPZXZC/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+    #Galaxy Watch9 ( 40 mm) graphite lte
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9BL3119/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+
+    #Galaxy Watch9 (Bluetooth, 44 mm) sliver bluetooth
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9BH59VZ/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+    #Galaxy Watch9 ( 44 mm) sliver lte
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9B66J2R/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+
+    #Galaxy Watch9 ( 44 mm) graphite bluetooth
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9BKX9S9/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+    #Galaxy Watch9 (44 mm) graphite lte
+    "https://www.amazon.com/Samsung-Galaxy-Graphite-Bluetooth-Smartwatch/dp/B0H9BKV7J1/ref=sr_1_1?crid=2BWX5OHPW4EF2&dib=eyJ2IjoiMSJ9.P5DKyv57_CHmoZ2U9NKPJLP4FpJ3vH_7jbbHaULy7AfJRCd1LrJ2DswEZjLLpYka9bEThlNcxaPP8LTFSre-8pnZR-B0Pzdufqbdgg8IfPeLoMAaR339mJtSoM1N24soAJ_cayN_bAVoKPFy-2ipfEGJkgVUEUZrE0nU6LWDF46PvZVHYAP9JOPOkWKd6gurF5GIi8XXTRL_eEI9dQQRjITnO15mroIP5sadnS-TvtELoiIsSBJG0oCGZDeSdZTgHsEpS6OR2hVSHjcFnBKADLox3KuQrmZIL8PJ7BlGyHg.GieqM3OkERmL2_NRRpK0OB_ofnfjWmAX0zaE9NPRemI&dib_tag=se&keywords=Galaxy%2BWatch9&qid=1784789591&s=electronics&sprefix=%2Celectronics%2C299&sr=1-1&th=1",
+
+
+    #Samsung Galaxy Watch Ultra2 , Titanium , 47mm LTE Color: Titanium gray
+    "https://www.amazon.com/Samsung-Galaxy-Ultra2-Titanium-Smartwatch/dp/B0H6NRPGT7?ref_=ast_sto_dp&th=1",
+
+    #Samsung Galaxy Watch Ultra2 ,  47mm LTE Color: Titanium Silver
+    "https://www.amazon.com/Samsung-Galaxy-Ultra2-Titanium-Smartwatch/dp/B0H6N8SCW5?ref_=ast_sto_dp&th=1"
     ]
 
     bestbuy_urls = [
@@ -1478,6 +1524,43 @@ async def main():
     "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-512gb-unlocked-sku-sm-f776uzwexaa/",
     #512gb graphite
     "https://www.samsung.com/us/smartphones/galaxy-z-flip8/buy/galaxy-z-flip8-512gb-unlocked-sku-sm-f776uzkexaa/",
+
+
+
+
+    # watches 
+
+
+
+    #Galaxy Watch9 (Bluetooth, 40 mm) cream bluetooth
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-40mm-cream-bluetooth-sku-sm-l340nzeaxaa/",
+    #Galaxy Watch9 (40 mm) cream lte
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-40mm-cream-lte-sku-sm-l345uzedxaa/",
+
+    #Galaxy Watch9 (Bluetooth, 40 mm) graphite bluetooth
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-40mm-graphite-bluetooth-sku-sm-l340nzkaxaa/",
+    #Galaxy Watch9 ( 40 mm) graphite lte
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-40mm-graphite-lte-sku-sm-l345uzkaxaa/",
+
+    #Galaxy Watch9 (Bluetooth, 44 mm) sliver bluetooth
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-44mm-silver-bluetooth-sku-sm-l350nzsaxaa/",
+    #Galaxy Watch9 ( 44 mm) sliver lte
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-44mm-silver-lte-sku-sm-l355uzsdxaa/",
+
+    #Galaxy Watch9 (Bluetooth, 44 mm) graphite bluetooth
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-44mm-graphite-bluetooth-sku-sm-l350nzkaxaa/",
+    #Galaxy Watch9 ( 44 mm) graphite lte
+    "https://www.samsung.com/us/watches/galaxy-watch9/buy/galaxy-watch9-44mm-graphite-lte-sku-sm-l355uzkdxaa/",
+
+
+
+
+
+    #Galaxy Watch Ultra2 47mm lte titanium gray , band - olive
+    "https://www.samsung.com/us/watches/galaxy-watch-ultra2/buy/galaxy-watch-ultra2-47mm-titanium-gray-lte-sku-sm-l715uzkaxaa/",
+    #Galaxy Watch Ultra2 47mm lte titanium silver, band - olive
+    "https://www.samsung.com/us/watches/galaxy-watch-ultra2/buy/galaxy-watch-ultra2-47mm-titanium-silver-lte-sku-sm-l715uzsaxaa/",
+
 
     ]
 
