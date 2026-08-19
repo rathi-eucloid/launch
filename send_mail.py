@@ -162,7 +162,7 @@ def load_report_model(path=EXCEL_PATH):
         s += 1
 
     # show products in reverse order (last product first)
-    groups.reverse()
+    #groups.reverse()
 
     # cutoff: keep rows from the past WINDOW_DAYS calendar days. Floor to the
     # start of the day so ALL of the earliest day's runs are kept -- otherwise
