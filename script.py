@@ -86,6 +86,17 @@ NOT_AVAILABLE = "not available"
 MAX_ATTEMPTS = 3
 RETRY_BACKOFF_SEC = 5
 
+# ---- Amazon-only pacing ----
+# RETRY_BACKOFF_SEC above is SHARED by the BestBuy and Samsung scrapers, so
+# these Amazon-specific values are kept separate: changing the shared constant
+# would also slow those two sites down.
+#   AMAZON_RETRY_BACKOFF_SEC   - wait before re-attempting the SAME url
+#   AMAZON_BETWEEN_URL_GAP_SEC - wait after finishing one url, before the next
+# Amazon rate-limits rapid sequential product-page hits and answers with a
+# CAPTCHA page instead of the product, so both gaps are deliberately generous.
+AMAZON_RETRY_BACKOFF_SEC = 20
+AMAZON_BETWEEN_URL_GAP_SEC = 20
+
 # Excel layout of Price Comparisons_v3_WIP (per product group of 9 columns):
 #   +0 Amazon price  +1 Samsung price  +2 BestBuy price
 #   +3 SKU_Amazon    +4 SKU_Samsung    +5 SKU_BestBuy
@@ -704,10 +715,19 @@ async def save_amazon_htmls(
                                 pass
                     # reached only when the attempt was transient (no break)
                     if attempt < MAX_ATTEMPTS:
-                        print(f"🔁 retrying in {RETRY_BACKOFF_SEC}s ...")
-                        await asyncio.sleep(RETRY_BACKOFF_SEC)
+                        print(f"🔁 retrying in {AMAZON_RETRY_BACKOFF_SEC}s ...")
+                        await asyncio.sleep(AMAZON_RETRY_BACKOFF_SEC)
 
                 results.append(result)
+
+                # Politeness gap between consecutive Amazon URLs (this url is
+                # done; wait before starting the next one). Skipped after the
+                # final url, since nothing follows it. The empty-slot branch
+                # above `continue`s before reaching here, which is correct: it
+                # makes no network request, so it needs no gap.
+                if idx < len(urls):
+                    print(f"⏳ waiting {AMAZON_BETWEEN_URL_GAP_SEC}s before the next Amazon URL ...")
+                    await asyncio.sleep(AMAZON_BETWEEN_URL_GAP_SEC)
 
             # Save cookies/session state after all pages are processed
             storage_state = await context.storage_state()
