@@ -1491,6 +1491,83 @@ async def main():
     ]
 
     bestbuy_urls = [
+# Galaxy Z Fold8 Ultra
+    #256gb violet shadow
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-ultra-256gb-unlocked-violet-shadow/JJGRF3T4XC/sku/6681677",
+    # 256 cream
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-ultra-256gb-unlocked-cream/JJGRF3TZF2",
+    #256 graphite
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-ultra-256gb-unlocked-graphite/JJGRF3T4PZ",
+
+
+    #512gb violet shadow
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-ultra-512gb-unlocked-violet-shadow/JJGRF3T4C5",
+    #512 cream
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-ultra-512gb-unlocked-cream/JJGRF3TZ4Q",
+    #512 graphite
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-ultra-512gb-unlocked-graphite/JJGRF3T4YG",
+
+
+
+
+    #Galaxy Z Fold8
+    #256gb Lavender
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-256gb-unlocked-lavender/JJGRF3TKPG",
+    #256gb cream
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-256gb-unlocked-cream/JJGRF3FP4T",
+    #256gb graphite
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-256gb-unlocked-graphite/JJGRF3FS98/sku/6681692",
+
+    #512gb lavender
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-512gb-unlocked-lavender/JJGRF3TKLZ",
+    #512gb cream
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-512gb-unlocked-cream/JJGRF3FPW7",
+    #512gb graphite
+    "https://www.bestbuy.com/product/samsung-galaxy-z-fold8-512gb-unlocked-graphite/JJGRF3FSLR",
+
+
+    #Galaxy Z Flip8
+    #256gb pink
+    "https://www.bestbuy.com/product/samsung-galaxy-z-flip8-256gb-unlocked-pink/JJGRF3TFLJ/sku/6681660",
+    #256gb cream
+    "https://www.bestbuy.com/product/samsung-galaxy-z-flip8-256gb-unlocked-cream/JJGRF3F9W7",
+    #256gb graphite
+    "https://www.bestbuy.com/product/samsung-galaxy-z-flip8-256gb-unlocked-graphite/JJGRF3TF7P",
+
+    #512gb pink
+    "https://www.bestbuy.com/product/samsung-galaxy-z-flip8-512gb-unlocked-pink/JJGRF3TF8Z",
+    #512gb cream
+    "https://www.bestbuy.com/product/samsung-galaxy-z-flip8-512gb-unlocked-cream/JJGRF3F9RL",
+    #512gb graphite
+    "https://www.bestbuy.com/product/samsung-galaxy-z-flip8-512gb-unlocked-graphite/JJGRF3T5V4",
+
+
+
+
+    # watches 
+
+
+
+    #Galaxy Watch9 (Bluetooth, 40 mm) cream bluetooth
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-40mm-bt-cream-2026/JJGRF3T4T3",
+    #Galaxy Watch9 (40 mm) cream lte
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-40mm-lte-cream-2026/JJGRF3WJPK",
+
+    #Galaxy Watch9 (Bluetooth, 40 mm) graphite bluetooth
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-40mm-bt-graphite-2026/JJGRF3T444/sku/6684173",
+    #Galaxy Watch9 ( 40 mm) graphite lte
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-40mm-lte-graphite-2026/JJGRF3WJP9",
+
+    #Galaxy Watch9 (Bluetooth, 44 mm) sliver bluetooth
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-44mm-bt-silver-2026/JJGRF3TVQV",
+    #Galaxy Watch9 ( 44 mm) sliver lte
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-44mm-lte-silver-2026/JJGRF3TVW2",
+
+    #Galaxy Watch9 (Bluetooth, 44 mm) graphite bluetooth
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-44mm-bt-graphite-2026/JJGRF3TVH8",
+    #Galaxy Watch9 ( 44 mm) graphite lte
+    "https://www.bestbuy.com/product/samsung-galaxy-watch9-aluminum-smartwatch-44mm-lte-graphite-2026/JJGRF3TVTS",
+
 
     ]
 
