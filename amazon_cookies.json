@@ -65,7 +65,7 @@
             "value": "A3dLiOxf2kaCs4e3bLQCDrI",
             "domain": ".amazon-adsystem.com",
             "path": "/",
-            "expires": 1806587439.243923,
+            "expires": 1806603016.092235,
             "httpOnly": true,
             "secure": true,
             "sameSite": "None"
@@ -75,7 +75,7 @@
             "value": "0",
             "domain": ".amazon-adsystem.com",
             "path": "/",
-            "expires": 1824990639.244006,
+            "expires": 1825006216.092302,
             "httpOnly": true,
             "secure": true,
             "sameSite": "None"
@@ -682,42 +682,32 @@
         },
         {
             "name": "session-token",
-            "value": "50VA30LSSvwzjqDxNRv4oQNPHg+SVsinBhx/6OpD7XqOSior0dBJb2U+llV9b580wYRD+TzWs2ZP/8e3a34KPZ6/k8KGp2wTzASHX7fgQgsJ+8Mjwl6yXqcZrzfvvo/8whbhaAK2iGs5jHz6k5FmTUk/YszBLSGgP6vSvrruCp4NpdmyBTldse7+nv3YiGiNbtub/laTZL1C9KKoWSnWNPMB+q6GX/Qe",
+            "value": "rPSXvCYdpRmsz5IYgOIAfZGfdazo9d0cSpXtE6XTTUmtS/vsCTMN04wJw9aWOytiVU0aUhnziEF3IZjBe6NZLq2Q0MS24fEZgceUqkygRgEz3fvSUGuOVyBE2ROngdK85Bis5OYKkkLgkxAy53vGKsGDScdm6InJgx8k86W34tCTO1aaIiqcgeOYrgl0rmAjqOLefVA3A6FUBG5tuLA7E93OIKnrhYed",
             "domain": ".amazon.com",
             "path": "/",
-            "expires": 1821966364.422506,
+            "expires": 1821982212.956944,
             "httpOnly": false,
             "secure": true,
             "sameSite": "Lax"
         },
         {
             "name": "csm-hit",
-            "value": "tb:s-8YHTFX8B477JT7FXK2Q4|1790430636714&t:1790430638352&adb:adblk_no",
+            "value": "tb:s-7RNFT3FNJZF7C4EC6VRY|1790446213134&t:1790446214984&adb:adblk_no",
             "domain": "www.amazon.com",
             "path": "/",
-            "expires": 1820670638,
+            "expires": 1820686214,
             "httpOnly": false,
             "secure": false,
             "sameSite": "Lax"
         },
         {
             "name": "rxc",
-            "value": "ALVVhTLxetw6uvZIcZQ",
+            "value": "AFjYBzqMbfiJ0MRfQVc",
             "domain": "www.amazon.com",
             "path": "/",
-            "expires": 1790517058.686202,
+            "expires": 1790532637.750852,
             "httpOnly": false,
             "secure": false,
-            "sameSite": "Lax"
-        },
-        {
-            "name": "cmc",
-            "value": "bIQWMSMWjWa66dA5b26+5tuX/pmMj0B55Qzb4lPbH5kie/+q+6RHD+H6oGKvRU/GzB+9Xma0covpXgbHPH2lXckOd9k9yPGh8QxICm/gpfELSayRvZnsHFZ4ZxGrPiGUhEdHcVTqVJL480BkWpyhWkI39rT0BkGgrfCmNdlnHC6nQTUs",
-            "domain": ".amazon.com",
-            "path": "/",
-            "expires": 1790430959.289493,
-            "httpOnly": false,
-            "secure": true,
             "sameSite": "Lax"
         }
     ],
@@ -726,164 +716,52 @@
             "origin": "https://www.amazon.com",
             "localStorage": [
                 {
-                    "name": "csa-ctoken-AZSFWQ4ECQCG81AS5VMZ",
-                    "value": "1790433065148"
-                },
-                {
-                    "name": "csm-bf",
-                    "value": "[\"Q3RPNE4K838PNEVCWYX8\",\"8YHTFX8B477JT7FXK2Q4\",\"Y86D0491BE2V6F2DP4YV\",\"6D9ETK74KFRHAH71MPJA\",\"EZDA240EH0V50ESMR1G8\",\"BMWCQ165VKJ0Y885FWWE\",\"M41KMD110ZP9JPBGTYAK\",\"EDMT9S23JR6MYTN5VQK1\",\"E97ZHK476HP2GFG9VWXY\",\"K64P0V743DGX9F14CBMJ\",\"NF2M5ZRH12PCXMY9MZ07\",\"PFTWEVHYZBE3SMZ89C45\",\"4G61BC301XMXZ9WH72M1\",\"BN90YCASEFKVG80GAD12\",\"YN42PM214DGR92RPGZ9H\",\"3MFWQV2R3W6SQKQ2Y0HS\",\"HQQ5WB6XQ87Z4R2PJ8S0\",\"ZESV14DEZAAJTBV9QGMD\",\"GCENMM4B0JN3T2ZYZJDC\",\"DNVKTM0HTVSDNRG4K5HA\"]"
-                },
-                {
-                    "name": "SWAX:PATC_META_KEY",
-                    "value": "{\"key\":\"_PATC_CONFIG\",\"expiry\":1790430654459}"
-                },
-                {
-                    "name": "csa-ctoken-6D9ETK74KFRHAH71MPJA",
-                    "value": "1790434146519"
-                },
-                {
-                    "name": "csa-ctoken-Z6PSVPD3R1KWRM9MTB62",
-                    "value": "1790433337697"
-                },
-                {
-                    "name": "csa-ctoken-Q3RPNE4K838PNEVCWYX8",
-                    "value": "1790434259804"
-                },
-                {
-                    "name": "csm:adb",
-                    "value": "adblk_no"
-                },
-                {
-                    "name": "csa-ctoken-AN36NWM2485RSTS6TG5V",
-                    "value": "1790433245749"
-                },
-                {
-                    "name": "csa-ctoken-K64P0V743DGX9F14CBMJ",
-                    "value": "1790433876780"
-                },
-                {
-                    "name": "csa-ctoken-VKV591XHZJHC6X1NJZ8N",
-                    "value": "1790433112092"
-                },
-                {
-                    "name": "csa-ctoken-ZESV14DEZAAJTBV9QGMD",
-                    "value": "1790433520486"
-                },
-                {
-                    "name": "rx",
-                    "value": "ALVVhTJIlQ422M0zuMkWJ2nA0t9Yis2etqUxH/kOnGbFbGup5AZbNrX9oke10M1NlKgJ6yp8ZmCyLI27Ns9kBVOHahWo2TT5IVwR8nwQcCcgtyxg58XCMIfJKIkGKszEUrC+t0h1f7y1t1kG8ktQ2P1pylY+lUnWY5WBueuVkmSff6cN4wGxfEoizEY8JTbi6pWGWqqukQGDiJwS2p3uML6CFqgCPIoWJpY8ftRWUzutAJ56sIGGs929538hUa4bDrPP+91W1QHEQ4taXaCOzpodgVIcjsbP3C2vnLmVRePA4PVhJC6m3AacLPBVWCLaQyn0m2N0OCe7B8o43V0g25GqhAsN0I+YN64BbC0fpXGkpMh8CRC8l15U/jKyRcOqY4yPS2aZAdr6MnSSVjBjBJxfjDHoEVow6d/eNrDb2KVVaJc6MNqVGmaSkKd1CX2U9SU/s4t6hxy6ysdKlZN0/ibQo5XDO+4+R6oziO4vQ+vPrUdRKKgFkX9Uj5rnzlpanOugYtv3migeXuIbP76XUNqP0/insYedjMIA2GGv1l2vHd/d4rAZkfpshC4O+93QzQ4Y2uBwQwjF"
-                },
-                {
-                    "name": "csa-ctoken-EDMT9S23JR6MYTN5VQK1",
-                    "value": "1790433965131"
-                },
-                {
-                    "name": "csa-ctoken-3J1M6PTB2WD9SFDX30E2",
-                    "value": "1790433199347"
+                    "name": "rx-pnt",
+                    "value": "1790446212|1"
                 },
                 {
                     "name": "csa-tabbed-browsing",
-                    "value": "{\"lastActive\":{\"visible\":true,\"pid\":\"mlha7w-j90nw2-6v7ayj-eixreq\",\"tid\":\"mlha7w-j90nw2-6v7ayj-eixreq\",\"ent\":{\"rid\":\"SQPECBVET64XE5PK57B5\",\"ety\":\"Detail\",\"esty\":\"Glance\"}},\"lastInteraction\":{},\"time\":1790430659804,\"initialized\":true}"
-                },
-                {
-                    "name": "csa-ctoken-GCENMM4B0JN3T2ZYZJDC",
-                    "value": "1790433474652"
-                },
-                {
-                    "name": "csa-ctoken-BN90YCASEFKVG80GAD12",
-                    "value": "1790433698041"
-                },
-                {
-                    "name": "csm-hit",
-                    "value": "tb:s-Q3RPNE4K838PNEVCWYX8|1790430659525&t:1790430659799&adb:adblk_no"
-                },
-                {
-                    "name": "csa-ctoken-DNVKTM0HTVSDNRG4K5HA",
-                    "value": "1790433428618"
-                },
-                {
-                    "name": "csa-ctoken-HQQ5WB6XQ87Z4R2PJ8S0",
-                    "value": "1790433564883"
-                },
-                {
-                    "name": "_PATC_CONFIG",
-                    "value": "{\"patcConfig\":{\"rules\":[{\"id\":\"buy_again_cart_limit_notification_desktop_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"Personalization_BuyAgain\"},{\"field\":\"pageType\",\"equals\":\"BuyAgainPage\"}]},\"experimentFlags\":[\"isEnabledForImportantMessage\"]},{\"id\":\"search_cart_limit_notification_desktop_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isEnabledForImportantMessage\"]},{\"id\":\"search_desktop_ewc_qs_state_sync\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isEwcQsStateSyncEnabled\"]},{\"id\":\"sw_desktop_optimistic_qs_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"Cart_SmartWagon_Recommendations\"},{\"field\":\"pageType\",\"equals\":\"ShoppingCartAdd\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"typ_desktop_optimistic_qs_t2\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"CheckoutThankYou\"},{\"field\":\"pageType\",\"equals\":\"CheckoutThankYou\"}]},\"experimentFlags\":[\"isEnabledForImportantMessage\",\"isSnappy\"]},{\"id\":\"byg_desktop_optimistic_qs_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"Personalization_QuantityStepper\"},{\"field\":\"pageType\",\"equals\":\"BeforeYouCheckout\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"search_optimistic_qs_enable_animation_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isSnappy\",\"isSearchPageSnappyAnimatedDesktop\"]},{\"id\":\"amazon_now_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"AmazonNow_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"amazon_now_dp_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"AmazonNow_AddToCart_DetailPage\"},{\"field\":\"pageType\",\"equals\":\"Detail\"}]},\"experimentFlags\":[\"isSnappy\",\"ENABLE_SNAPPY_QS_WITH_ANIMATION\"]},{\"id\":\"psx_complete_the_set_dp_optimistic_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"PSX_CompleteTheSet_DetailPage\"},{\"field\":\"pageType\",\"equals\":\"Detail\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"hnb_cards_experiment_optimistic_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"HnB_CardsExperiment\"},{\"field\":\"pageType\",\"equals\":\"Detail\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"SEARCH_EUSTORES_PUIS_ATD_STEPPER_V2_MEASUREMENT_1364540__T1_DESKTOP\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"SEARCH_EUSTORES_PUIS_ATD_STEPPER_V2_MEASUREMENT_1364540__T1\"]},{\"id\":\"nexus_logging_enabled\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"SiteWideActionExecutor\"}]},\"experimentFlags\":[\"isNexusLoggingEnabled\"]},{\"id\":\"ccs_ies_search_desktop_snappy_qs_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"CCS_DesktopIES_SearchPage\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isSnappy\"]}]}}"
-                },
-                {
-                    "name": "rx-pnt",
-                    "value": "1790430659|29"
-                },
-                {
-                    "name": "csa-ctoken-8YHTFX8B477JT7FXK2Q4",
-                    "value": "1790434238363"
-                },
-                {
-                    "name": "csa-ctoken-SQPECBVET64XE5PK57B5",
-                    "value": "1790433021052"
-                },
-                {
-                    "name": "a-font-class",
-                    "value": "a-ember a-ember-1-0-0 a-ember-modern-display a-ember-modern-display-1-0-1 a-ember-modern-text a-ember-modern-text-1-0-1"
-                },
-                {
-                    "name": "amznfbgid",
-                    "value": "X84-9666572-1001037:1790429438"
-                },
-                {
-                    "name": "csa-ctoken-B0FET8S968Z10C56V513",
-                    "value": "1790433155850"
-                },
-                {
-                    "name": "csa-ctoken-NF2M5ZRH12PCXMY9MZ07",
-                    "value": "1790433833028"
-                },
-                {
-                    "name": "csa-ctoken-M41KMD110ZP9JPBGTYAK",
-                    "value": "1790434008951"
-                },
-                {
-                    "name": "csa-ctoken-WTBMHB84YCD4DH1R9NQM",
-                    "value": "1790433383096"
-                },
-                {
-                    "name": "csa-ctoken-E97ZHK476HP2GFG9VWXY",
-                    "value": "1790433921207"
-                },
-                {
-                    "name": "csa-ctoken-Y86D0491BE2V6F2DP4YV",
-                    "value": "1790434194504"
+                    "value": "{\"lastActive\":{\"visible\":true,\"pid\":\"mlha7w-j90nw2-6v7ayj-eixreq\",\"tid\":\"mlha7w-j90nw2-6v7ayj-eixreq\",\"ent\":{\"rid\":\"SQPECBVET64XE5PK57B5\",\"ety\":\"Detail\",\"esty\":\"Glance\"}},\"lastInteraction\":{},\"time\":1790446215008,\"initialized\":true}"
                 },
                 {
                     "name": "vse_brila_cc_status",
                     "value": "disabled"
                 },
                 {
-                    "name": "csa-ctoken-4G61BC301XMXZ9WH72M1",
-                    "value": "1790433743803"
+                    "name": "csm-bf",
+                    "value": "[\"7RNFT3FNJZF7C4EC6VRY\",\"Q3RPNE4K838PNEVCWYX8\",\"8YHTFX8B477JT7FXK2Q4\",\"Y86D0491BE2V6F2DP4YV\",\"6D9ETK74KFRHAH71MPJA\",\"EZDA240EH0V50ESMR1G8\",\"BMWCQ165VKJ0Y885FWWE\",\"M41KMD110ZP9JPBGTYAK\",\"EDMT9S23JR6MYTN5VQK1\",\"E97ZHK476HP2GFG9VWXY\",\"K64P0V743DGX9F14CBMJ\",\"NF2M5ZRH12PCXMY9MZ07\",\"PFTWEVHYZBE3SMZ89C45\",\"4G61BC301XMXZ9WH72M1\",\"BN90YCASEFKVG80GAD12\",\"YN42PM214DGR92RPGZ9H\",\"3MFWQV2R3W6SQKQ2Y0HS\",\"HQQ5WB6XQ87Z4R2PJ8S0\",\"ZESV14DEZAAJTBV9QGMD\",\"GCENMM4B0JN3T2ZYZJDC\"]"
                 },
                 {
-                    "name": "csa-ctoken-BMWCQ165VKJ0Y885FWWE",
-                    "value": "1790434055984"
+                    "name": "a-font-class",
+                    "value": "a-ember a-ember-1-0-0 a-ember-modern-display a-ember-modern-display-1-0-1 a-ember-modern-text a-ember-modern-text-1-0-1"
                 },
                 {
-                    "name": "csa-ctoken-3MFWQV2R3W6SQKQ2Y0HS",
-                    "value": "1790433608740"
+                    "name": "SWAX:PATC_META_KEY",
+                    "value": "{\"key\":\"_PATC_CONFIG\",\"expiry\":1790446815941}"
                 },
                 {
-                    "name": "csa-ctoken-EHK8MDQTCJ9M5M993V2M",
-                    "value": "1790433290813"
+                    "name": "amznfbgid",
+                    "value": "X84-9666572-1001037:1790429438"
                 },
                 {
-                    "name": "csa-ctoken-EZDA240EH0V50ESMR1G8",
-                    "value": "1790434102129"
+                    "name": "csm:adb",
+                    "value": "adblk_no"
                 },
                 {
-                    "name": "csa-ctoken-YN42PM214DGR92RPGZ9H",
-                    "value": "1790433653760"
+                    "name": "csm-hit",
+                    "value": "tb:s-7RNFT3FNJZF7C4EC6VRY|1790446213134&t:1790446214984&adb:adblk_no"
                 },
                 {
-                    "name": "csa-ctoken-PFTWEVHYZBE3SMZ89C45",
-                    "value": "1790433788283"
+                    "name": "rx",
+                    "value": "AFjYBzpqRSWFsv8kAg2QekYoIAd7HWuBO+QFariG1AJ7eDMCdyeEuTYd/Yl2s0Hou/OxxwaMVSqXrn7AVbdg/fod7eBJRDPUjn+e+v8iSPuPRPQ8F7PGQNSWv0g/jfiVPW5a1reWHOvJ0wojBLJNCSuGlMSTUJpfHPzy6JxkWqsp7XeZqRurt4jAMmNGBnPZNM6Aj54AQ5IT+Kt/Qrs4+Tg4F8ZFBYu+mBh8AKaLpdx6hMpGKcJ5XI9lXkmKXxl+YoQKJ2SW61yO3g3Pi+tOm5+he/dlWZygENzFBLD5+JzpExflB08wXr3NXCWY6ztFaWmcqUc6S9tQMhHsm5oMVKIMHXOM9Uxdq9D5euWpMJaaqOV1QdmxhVdaBdeuEnmTCZ3K6xNy93Vojx+tt6L3MFMq/qIysdXVij9FjAUdWWr9Ima0bl8R5tz+X8JJpPhPD+8hWu+g5Xl8OYmevmwDKT3gyloAGRIgfkGz++Q79ZxUbLpGT3AqacWMlsvD/qFjt7MYtqYDiMi2cerOC+7jVqWxP4tmfX6YxZULYIMRgbGOtDFvMcYPmx94UTo7GGEpF4TGB11S93OLWrG8PPzd0N2IwjyDQRApdXT8wBCFk83ld+D9Ar0QBvVRbwAAiaDLSYtPu1BrjuiRUFNI"
+                },
+                {
+                    "name": "csa-ctoken-7RNFT3FNJZF7C4EC6VRY",
+                    "value": "1790449815007"
+                },
+                {
+                    "name": "_PATC_CONFIG",
+                    "value": "{\"patcConfig\":{\"rules\":[{\"id\":\"buy_again_cart_limit_notification_desktop_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"Personalization_BuyAgain\"},{\"field\":\"pageType\",\"equals\":\"BuyAgainPage\"}]},\"experimentFlags\":[\"isEnabledForImportantMessage\"]},{\"id\":\"search_cart_limit_notification_desktop_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isEnabledForImportantMessage\"]},{\"id\":\"search_desktop_ewc_qs_state_sync\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isEwcQsStateSyncEnabled\"]},{\"id\":\"sw_desktop_optimistic_qs_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"Cart_SmartWagon_Recommendations\"},{\"field\":\"pageType\",\"equals\":\"ShoppingCartAdd\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"typ_desktop_optimistic_qs_t2\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"CheckoutThankYou\"},{\"field\":\"pageType\",\"equals\":\"CheckoutThankYou\"}]},\"experimentFlags\":[\"isEnabledForImportantMessage\",\"isSnappy\"]},{\"id\":\"byg_desktop_optimistic_qs_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"Personalization_QuantityStepper\"},{\"field\":\"pageType\",\"equals\":\"BeforeYouCheckout\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"search_optimistic_qs_enable_animation_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isSnappy\",\"isSearchPageSnappyAnimatedDesktop\"]},{\"id\":\"amazon_now_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"AmazonNow_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"amazon_now_dp_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"AmazonNow_AddToCart_DetailPage\"},{\"field\":\"pageType\",\"equals\":\"Detail\"}]},\"experimentFlags\":[\"isSnappy\",\"ENABLE_SNAPPY_QS_WITH_ANIMATION\"]},{\"id\":\"psx_complete_the_set_dp_optimistic_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"PSX_CompleteTheSet_DetailPage\"},{\"field\":\"pageType\",\"equals\":\"Detail\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"hnb_cards_experiment_optimistic_qs_desktop\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"HnB_CardsExperiment\"},{\"field\":\"pageType\",\"equals\":\"Detail\"}]},\"experimentFlags\":[\"isSnappy\"]},{\"id\":\"SEARCH_EUSTORES_PUIS_ATD_STEPPER_V2_MEASUREMENT_1364540__T1_DESKTOP\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"EUIC_AddToCart_Search\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"SEARCH_EUSTORES_PUIS_ATD_STEPPER_V2_MEASUREMENT_1364540__T1\"]},{\"id\":\"nexus_logging_enabled\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"SiteWideActionExecutor\"}]},\"experimentFlags\":[\"isNexusLoggingEnabled\"]},{\"id\":\"ccs_ies_search_desktop_snappy_qs_t1\",\"conditions\":{\"operator\":\"AND\",\"criteria\":[{\"field\":\"clientName\",\"equals\":\"CCS_DesktopIES_SearchPage\"},{\"field\":\"pageType\",\"equals\":\"Search\"}]},\"experimentFlags\":[\"isSnappy\"]}]}}"
                 }
             ]
         }
