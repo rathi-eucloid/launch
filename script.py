@@ -605,26 +605,25 @@ async def save_amazon_htmls(
     cookies_file="amazon_cookies.json",
     headless=True,
 ):
-    """Loop over the list of URLs, save each HTML to a unique file, and update cookies once."""
+    """Loop over the list of URLs and save each HTML to a unique file. Uses a fresh
+    cookieless session each run; cookies are discarded at the end, never saved."""
     os.makedirs(output_dir, exist_ok=True)
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=headless, slow_mo=100)
 
-        # Load existing cookies/session state if available
-        if os.path.exists(cookies_file):
-            print("🍪 Loading existing cookies/session...")
-            context = await browser.new_context(storage_state=cookies_file)
-        else:
-            print("🆕 No cookies found, creating a new session...")
-            context = await browser.new_context(
-                user_agent=(
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) "
-                    "Chrome/120.0.0.0 Safari/537.36"
-                ),
-                viewport={"width": 1366, "height": 768},
-            )
+        # Always start a fresh, cookieless session. Cookies are NOT loaded from
+        # or saved to cookies_file; they live only in memory for this run and are
+        # discarded when the browser closes.
+        print("🆕 Creating a new session (Amazon cookies are not persisted)...")
+        context = await browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            ),
+            viewport={"width": 1366, "height": 768},
+        )
 
         try:
             results = []
@@ -729,11 +728,8 @@ async def save_amazon_htmls(
                     print(f"⏳ waiting {AMAZON_BETWEEN_URL_GAP_SEC}s before the next Amazon URL ...")
                     await asyncio.sleep(AMAZON_BETWEEN_URL_GAP_SEC)
 
-            # Save cookies/session state after all pages are processed
-            storage_state = await context.storage_state()
-            with open(cookies_file, "w", encoding="utf-8") as f:
-                json.dump(storage_state, f, ensure_ascii=False, indent=4)
-            print(f"\n🍪 Cookies/session state written to {cookies_file}")
+            # Cookies are intentionally NOT saved: the session is discarded
+            # when the browser closes below.
 
         finally:
             await browser.close()
