@@ -345,7 +345,7 @@ def send_email(html_body):
     sender = os.environ.get("MAIL_FROM", username)
     subject = os.environ.get(
         "MAIL_SUBJECT",
-        f"Samsung vs Amazon Price Report — {datetime.now():%d %b %Y}",
+        f"QHB8 SKUs Price Report — {datetime.now():%d %b %Y}",
     )
 
     missing = [name for name, val in
