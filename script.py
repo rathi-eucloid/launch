@@ -79,6 +79,22 @@ from openpyxl import Workbook, load_workbook
 # =========================================================================
 NOT_AVAILABLE = "not available"
 
+# ---- plain-English reasons, written in the price cell when there is no price ----
+# Every result dict carries one of these in "reason" (unless a price was found).
+# Product facts (what the SITE says) and our own failures are kept separate, so
+# e.g. a page that never loaded is never reported as "Out of stock".
+R_NOT_SOLD_HERE   = "Not sold here"        # no URL for this product on this site
+R_OUT_OF_STOCK    = "Out of stock"         # the site says out of stock / unavailable
+R_LISTING_REMOVED = "Listing removed"      # the URL now opens a different product
+R_NOT_SOLD_NEW    = "Not sold new"         # only used / renewed / open-box offers
+R_NO_PRICE_SHOWN  = "No price shown"       # product page loaded, site shows no price
+R_PAGE_NOT_LOADED = "Page didn't load"     # page came back without its product data
+R_BLOCKED         = "Blocked by site"      # bot-check page on every attempt
+R_NETWORK         = "Network issue"        # browser crash / timeout / connection error
+R_FETCH_FAILED    = "Couldn't fetch"       # Apify ran but returned nothing usable
+R_NOT_CHECKED     = "Not checked"          # no Apify token configured
+R_SERVICE_DOWN    = "Service unavailable"  # Apify tokens out of credit / rejected
+
 # Retry policy for transient failures (network errors, timeouts, or a page that
 # navigated OK but didn't render its price in time). 1 initial try + 2 retries.
 # Genuine outcomes (a redirect to another product, or a page that explicitly says
@@ -337,16 +353,21 @@ def _to_jsonable(v):
 def _render_cells(result, slot_sku, site):
     """Given a per-URL result dict, return (price_cell, sku_cell) for the sheet.
 
-    - price -> float when parseable, "not available" for redirect/no-price, else None.
+    - price -> float when parseable, else the result's plain-English "reason"
+               (e.g. "Out of stock", "Network issue"; see the R_* constants).
     - sku   -> canonical per-slot SM code (Amazon/BestBuy upper, Samsung lower);
-               "not available" mirrors the price when the product wasn't found.
+               the reason mirrors the price when no price was found.
     """
     raw = result.get("price") if result else None
-    if raw == NOT_AVAILABLE:
-        return NOT_AVAILABLE, NOT_AVAILABLE
-    num = clean_price_value(raw)
+    num = clean_price_value(raw) if raw != NOT_AVAILABLE else None
     if num is None:
-        return None, None            # genuine gap (fetch error / empty URL) -> blank
+        reason = result.get("reason") if result else None
+        if reason:
+            return reason, reason
+        # fallback for a result without a reason (should not happen)
+        if raw == NOT_AVAILABLE:
+            return NOT_AVAILABLE, NOT_AVAILABLE
+        return None, None
     sku = None
     if slot_sku:
         sku = slot_sku if site == "samsung" else slot_sku.upper()
@@ -632,7 +653,7 @@ async def save_amazon_htmls(
                 # results stay aligned with the product groups, but skip cleanly.
                 if not url or not url.strip():
                     print(f"\n[Amazon {idx}/{len(urls)}] empty URL slot -> skipping")
-                    results.append({"url": url, "file": None, "price": None, "model": None, "status": "empty"})
+                    results.append({"url": url, "file": None, "price": None, "model": None, "status": "empty", "reason": R_NOT_SOLD_HERE})
                     continue
                 # Retry transient failures (nav error / timeout / price not
                 # rendered). A redirect or a genuine "Currently unavailable" page
@@ -682,7 +703,7 @@ async def save_amazon_htmls(
                         price, redirected = parse_amazon_html(output_file, expected_url=url)
 
                         if redirected:
-                            result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "redirect"}
+                            result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "redirect", "reason": R_LISTING_REMOVED}
                             break  # final: different product
                         if price:
                             # Amazon no longer exposes the SM- model on the page; the
@@ -692,20 +713,23 @@ async def save_amazon_htmls(
                         # No price. If the page explicitly says unavailable, that's
                         # a genuine result -> final. Otherwise the price element just
                         # didn't render -> transient -> retry.
-                        result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "no_price"}
+                        result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "no_price",
+                                  "reason": _amazon_no_price_reason(html_content)}
                         if _looks_unavailable(html_content, "amazon"):
                             print("ℹ️ page marked 'Currently unavailable' -> final, not retrying")
+                            result["reason"] = R_OUT_OF_STOCK
                             break
                         if _amazon_buybox_is_used(html_content):
                             # Used-buybox: the new price is genuinely not offered.
                             # Retrying won't change the condition -> final.
                             print("ℹ️ buybox is a USED offer -> new price not available, not retrying")
                             result["status"] = "used_offer"
+                            result["reason"] = R_NOT_SOLD_NEW
                             break
                         print(f"⚠️ price not found & page not marked unavailable (attempt {attempt}/{MAX_ATTEMPTS})")
                     except Exception as e:
                         print(f"❌ Error processing URL {url} (attempt {attempt}/{MAX_ATTEMPTS}): {e}")
-                        result = {"url": url, "file": None, "price": None, "model": None, "status": f"error: {e}"}
+                        result = {"url": url, "file": None, "price": None, "model": None, "status": f"error: {e}", "reason": R_NETWORK}
                     finally:
                         if page:
                             try:
@@ -798,6 +822,17 @@ def parse_amazon_html(html_file_path="amazon.html", expected_url=None):
     return price, False
 
 
+
+def _amazon_no_price_reason(html):
+    """Plain-English reason when no price was read from a saved Amazon page."""
+    low = (html or "").lower()
+    if "validatecaptcha" in low:
+        return R_BLOCKED              # Amazon's bot-check page, not the product
+    if 'id="producttitle"' not in low:
+        return R_PAGE_NOT_LOADED      # no product on the page at all
+    return R_NO_PRICE_SHOWN           # product page loaded, no buy-box price
+
+
 # -----------------------
 # BESTBUY-specific logic
 # -----------------------
@@ -861,6 +896,27 @@ def parse_bestbuy_html(input_file="bestbuy.html", expected_url=None):
     print("--------------------------------\n")
 
     return price, model_number, False
+
+
+def _bestbuy_no_price_reason(html):
+    """Plain-English reason when no price was read from a saved BestBuy page.
+    "Out of stock" only when the JSON-LD offer says so (not from the page-wide
+    "sold out" text search, which can also match other products on the page)."""
+    m = re.search(r"<title[^>]*>(.*?)</title>", html or "", re.I | re.S)
+    if m and "access denied" in m.group(1).lower():
+        return R_BLOCKED
+    found = False
+    for it in iter_ldjson(html or ""):
+        if not isinstance(it, dict) or not it.get("offers"):
+            continue
+        found = True
+        offers = it["offers"]
+        for off in (offers if isinstance(offers, list) else [offers]):
+            avail = str(off.get("availability", "")).lower() if isinstance(off, dict) else ""
+            if any(k in avail for k in ("outofstock", "soldout", "discontinued")):
+                return R_OUT_OF_STOCK
+    return R_NO_PRICE_SHOWN if found else R_PAGE_NOT_LOADED
+
 
 def _find_free_port():
     """Return an OS-assigned free TCP port on localhost."""
@@ -1028,7 +1084,7 @@ async def save_bestbuy_htmls(
             # results stay aligned with the product groups, but skip cleanly.
             if not url or not url.strip():
                 print(f"\n[BestBuy {idx}/{len(urls)}] empty URL slot -> skipping")
-                results.append({"url": url, "file": None, "price": None, "model": None, "status": "empty"})
+                results.append({"url": url, "file": None, "price": None, "model": None, "status": "empty", "reason": R_NOT_SOLD_HERE})
                 continue
             # Retry transient failures (nav error / timeout / JSON-LD not
             # rendered). A redirect or a genuine sold-out page is final.
@@ -1140,19 +1196,20 @@ async def save_bestbuy_htmls(
                     price, model, redirected = parse_bestbuy_html(output_file, expected_url=url)
 
                     if redirected:
-                        result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "redirect"}
+                        result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "redirect", "reason": R_LISTING_REMOVED}
                         break  # final: different product
                     if price:
                         result = {"url": url, "file": output_file, "price": price, "model": model, "status": "ok"}
                         break  # final: got a price
-                    result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "no_price"}
+                    result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "model": NOT_AVAILABLE, "status": "no_price",
+                              "reason": _bestbuy_no_price_reason(html_content)}
                     if _looks_unavailable(html_content, "bestbuy"):
                         print("ℹ️ page marked sold out / no longer available -> final, not retrying")
                         break
                     print(f"⚠️ price not found & page not marked unavailable (attempt {attempt}/{MAX_ATTEMPTS})")
                 except Exception as e:
                     print(f"❌ Error processing URL {url} (attempt {attempt}/{MAX_ATTEMPTS}): {e}")
-                    result = {"url": url, "file": None, "price": None, "model": None, "status": f"error: {e}"}
+                    result = {"url": url, "file": None, "price": None, "model": None, "status": f"error: {e}", "reason": R_NETWORK}
                 finally:
                     # Tear down EVERYTHING so the next attempt/URL starts on a
                     # brand-new Chrome process + connection + profile.
@@ -1250,6 +1307,23 @@ def extract_price(filename, expected_url=None):
     print("🔎 Extracted Price:", price)
     return price, False
 
+def _samsung_no_price_reason(html, expected_url):
+    """Plain-English reason when no price was read from a Samsung page.
+    Decided from the JSON-LD entry for THIS sku only. (Not from
+    _looks_unavailable(html, "samsung"): that searches the whole page for
+    "out of stock" / "notify me" / "sold out", words that every Samsung page
+    contains in its built-in message templates, so it is always True.)"""
+    sku = (extract_sku_from_url(expected_url) or "").lower()
+    for it in iter_ldjson(html or ""):
+        if isinstance(it, dict) and it.get("sku") and str(it["sku"]).lower() == sku:
+            off = it.get("offers")
+            avail = str(off.get("availability", "")).lower() if isinstance(off, dict) else ""
+            if any(k in avail for k in ("outofstock", "soldout", "discontinued")):
+                return R_OUT_OF_STOCK
+            return R_NO_PRICE_SHOWN       # product data loaded, no price in it
+    return R_PAGE_NOT_LOADED              # no product data for this sku on the page
+
+
 async def save_samsung_htmls(
     urls,
     output_dir="outputs",
@@ -1278,7 +1352,8 @@ async def save_samsung_htmls(
                 # results stay aligned with the product groups, but skip cleanly.
                 if not url or not url.strip():
                     print(f"\n[Samsung {idx}/{len(urls)}] empty URL slot -> skipping")
-                    results.append({"url": url, "file": None, "price": None, "sku": None, "status": "empty"})
+                    results.append({"url": url, "file": None, "price": None, "sku": None, "status": "empty",
+                                    "reason": R_NOT_SOLD_HERE})
                     continue
                 safe_name = sanitize_filename(url)
                 output_file = os.path.join(output_dir, f"samsung_{idx}_{safe_name}.html")
@@ -1331,21 +1406,24 @@ async def save_samsung_htmls(
 
                         if not device_info_ok:
                             # transient (page structure never appeared) -> retry
-                            result = {"url": url, "file": output_file, "price": None, "sku": sku, "status": "partial: no device_info"}
+                            result = {"url": url, "file": output_file, "price": None, "sku": sku, "status": "partial: no device_info",
+                                      "reason": R_PAGE_NOT_LOADED}
                             print(f"⚠️ #device_info missing (attempt {attempt}/{MAX_ATTEMPTS})")
                         else:
                             # Parse saved HTML (updated: redirect-aware, JSON-LD by SKU)
                             price, redirected = extract_price(output_file, expected_url=url)
                             if redirected:
                                 print("[REDIRECT] Samsung redirect -> not available")
-                                result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "sku": NOT_AVAILABLE, "status": "redirect"}
+                                result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "sku": NOT_AVAILABLE, "status": "redirect",
+                                          "reason": R_LISTING_REMOVED}
                                 break  # final: different product
                             elif price:
                                 print("🔎 Final extracted values — Price:", price, "SKU:", sku)
                                 result = {"url": url, "file": output_file, "price": price, "sku": sku, "status": "ok"}
                                 break  # final: got a price
                             else:
-                                result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "sku": NOT_AVAILABLE, "status": "no_price"}
+                                result = {"url": url, "file": output_file, "price": NOT_AVAILABLE, "sku": NOT_AVAILABLE, "status": "no_price",
+                                          "reason": _samsung_no_price_reason(html, url)}
                                 if _looks_unavailable(html, "samsung"):
                                     print("ℹ️ page marked sold out / coming soon -> final, not retrying")
                                     break
@@ -1355,7 +1433,8 @@ async def save_samsung_htmls(
                         await human_delay_short()
                     except Exception as e:
                         print(f"❌ Error processing URL {url} (attempt {attempt}/{MAX_ATTEMPTS}): {e}")
-                        result = {"url": url, "file": None, "price": None, "sku": None, "status": f"error: {e}"}
+                        result = {"url": url, "file": None, "price": None, "sku": None, "status": f"error: {e}",
+                                  "reason": R_NETWORK}
                     finally:
                         try:
                             if page:
